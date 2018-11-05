@@ -20,12 +20,26 @@ int main()
   teams = getCompetitors();
   periods = getPeriods();
 
-  scoreboard.resize(teams);
+  // make scoreboard size (teams->rows, periods->columns) and set all scores to 0
 
-  for(int row=0; row < scoreboard.size(); row++)
+  // print out scoreboard
+
+  for(int period = 0; period < periods; period++)
   {
-    scoreboard[row].resize(periods);
+    for(int team = 0; team < teams; team++)
+    {
+      int score;
+      // ask user for team's score in period and retrieve number to store in score
+
+      scoreboard[team][period] = score;
+    }
+    cout<<"End of period "<<(period + 1)<<endl;
+    //print out scoreboard
   }
+  cout<<"End of game. Final scores: "<<endl;
+  //print out scoreboard
+
+  //print who won and what the total score was
 
   return 0;
 }
