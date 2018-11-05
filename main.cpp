@@ -10,6 +10,8 @@ const int MIN_TEAMS = 1;
 
 int getCompetitors();
 int getPeriods();
+void printScoreboard(vector <vector <int> >);
+vector<vector <int> > createScoreboard(int,int);
 
 int main()
 {
@@ -21,8 +23,9 @@ int main()
   periods = getPeriods();
 
   // make scoreboard size (teams->rows, periods->columns) and set all scores to 0
-
+  scoreboard = createScoreboard(teams, periods);
   // print out scoreboard
+  printScoreboard(scoreboard);
 
   for(int period = 0; period < periods; period++)
   {
@@ -70,3 +73,34 @@ int getPeriods()
   }while( periods < MIN_PERIODS || periods > MAX_PERIODS );
   return periods;
 }
+
+// display the full scoreboard
+void printScoreboard( vector<vector <int> > currentScores )
+{
+  cout<<"SCOREBOARD=====\n";
+  for(int row = 0; row < currentScores.size(); row++)
+  {
+    for(int col = 0; col < currentScores[row].size(); col++)
+    {
+      cout<<currentScores[row][col]<<" |";
+    }
+    cout<<endl;
+  }
+}
+
+vector <vector <int> > createScoreboard(int players, int periods)
+{
+  vector <vector <int> > board;
+  board.resize(players);
+  for(int row = 0; row < board.size(); row++)
+  {
+    board[row].resize(periods);
+    for(int col = 0; col <board.[row].size() col++)
+    {
+      board[row][col] = 0;
+    }
+  }
+
+  return board;
+}
+
