@@ -95,7 +95,7 @@ vector <vector <int> > createScoreboard(int players, int periods)
   for(int row = 0; row < board.size(); row++)
   {
     board[row].resize(periods);
-    for(int col = 0; col <board.[row].size() col++)
+    for(int col = 0; col <board.[row].size(); col++)
     {
       board[row][col] = 0;
     }
